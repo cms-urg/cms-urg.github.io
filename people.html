@@ -4,3 +4,29 @@ layout: default
 ---
 
 <h1>People</h1>
+
+<hr/>
+
+<h2>Faculty</h2>
+
+{% for person in site.people %}
+    {% if person.category == 'faculty' %}
+        <div class="people-card">
+            <img src="{{ person.photo }}" />
+            <label>{{ person.name }}</label>
+        </div>
+    {% endif %}
+{% endfor %}
+
+<hr/>
+
+<h2>Students</h2>
+
+{% for person in site.people %}
+    {% if person.category == 'student' %}
+        <div class="people-card">
+            <img src="{{ person.photo }}" />
+            <label>{{ person.name }}</label>
+        </div>
+    {% endif %}
+{% endfor %}

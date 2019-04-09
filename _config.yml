@@ -25,6 +25,9 @@ author:         'CMS Undergraduate Research Group'
 
 permalink:       /:year/:title/
 
+collections:
+  - people
+
 defaults:
     -
         scope:
