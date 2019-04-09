@@ -8,7 +8,7 @@ To create posts, just create a new file under `_posts` folder with standard Jeky
 
 ## Adding Members
 
-To add a new member to [Peoples] page, simply create a new file called `FirstName.md` under `_people` folder with following content:
+To add a new member to [People] page, simply create a new file called `FirstName.md` under `_people` folder with following content:
 
 ```
 ---
