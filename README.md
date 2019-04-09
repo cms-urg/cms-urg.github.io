@@ -1,51 +1,53 @@
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kronik3r/daktilo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+# Cactus Theme for Jekyll
 
-# Daktilo
-Daktilo is a [Jekyll](jekyllrb.com) theme with a minimal design inspired from typewriters.
+This is a port of [Cactus](https://github.com/koenbok/Cactus)'s default theme for Jekyll.
+Feel free to fork, change, modify and re-use it.
 
-# More info and Live preview
-[Click here](http://daktilo.github.io/) to see the theme in action.
+## How to use it
 
-# Features
-- Fully responsive
-- [Disqus](https://disqus.com/) integration for comments.
-- Google Analytics integration.
-- Syntax Highlighter (using [highlight.js](https://highlightjs.org/)).
-- Support for categories.
-- Font-Awesome Icons.
-- Optimized for SEO.
-- Coolest [404 page ever](http://kronik3r.github.io/daktilo/404.html).
+Simply clone this repository, and then run `jekyll serve` inside the directory.
+This theme is fully compliant with GH Pages and their dependencies.
+For extra info: [Using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/#keeping-jekyll-up-to-date).
 
-# How to use it
-Start by cloning the repository, then check the `_config.yml` file and change it accordingly.
-Note that the `title` property is what will be displayed as logo.
+Cactus theme includes:
 
-Finally execute `jekyll serve --watch` and head to [localhost:4000](http://127.0.0.1:4000) to see the result.
+* Pagination
+* Rss feed
+* Google Analytics Tracking code
+* Code Syntax Highlight
+* Author's profile with picture header
+* Twitter/Facebook share buttons
+* Archive posts list under each post
+* Disqus comments
 
-# Using categories
-Categories are little bit tricky. Please make sure to do the following for each category:
+## Screenshots
 
-- Create a file within `categories` folder with the name of your category
-For example let's say that we have a category called `An Awesome Category` you will need to add an `an-awesome-category.html` file with this content:
+![index page](https://raw.githubusercontent.com/nickbalestra/kactus/master/assets/images/Kactus-theme-index.png)
+![post page](https://raw.githubusercontent.com/nickbalestra/kactus/master/assets/images/Kactus-theme-post.png)
 
-``` html
----
-layout: category
-category: an-awesome-category
-permalink: /categories/an-awesome-category/
----
 
-```
+## Thanks
+Most of the work has been already done by the [Cactus for mac authors](https://github.com/koenbok/Cactus/blob/master/AUTHORS), I've just ported their default theme to Jekyll.
+I've also added few things specific to Jekyll and some minor style changes.
 
-- Create an entry inside `_data/categories.yml`
+## Copyright & License
 
-``` html
-- slug: an-awesome-category
-  name: An Awesome Category
-```
+Copyright (c) 2015 [Cactus Authors](https://github.com/koenbok/Cactus/blob/master/AUTHORS) -  Released under the MIT License.
 
-- Then you will see it in the footer in the `Explore` section.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-# License
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-The contents of this repository is licensed under [The MIT License.](https://opensource.org/licenses/MIT)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
