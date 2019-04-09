@@ -17,3 +17,19 @@ name: Your full name
 photo: Your photo URL
 ---
 ```
+
+## Adding Projects
+
+To add a new project, create a new file called `ProjectName.md` under `_projects` folder with following content:
+
+```
+---
+name: Project name
+description:
+    >
+    Project description
+    can have multiple lines
+github: GitHub URL
+website: Website URL, if you don't have a website, use GitHub URL
+---
+```
