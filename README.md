@@ -2,9 +2,13 @@
 
 > This is a Jekyll theme modified from https://github.com/koenbok/Cactus
 
-## Adding Member
+## Creating Posts
 
-To add a new member to [Peoples] page, simply create a new file called `FirstName.md` under `_people` folder with following format:
+To create posts, just create a new file under `_posts` folder with standard Jekyll post format.
+
+## Adding Members
+
+To add a new member to [Peoples] page, simply create a new file called `FirstName.md` under `_people` folder with following content:
 
 ```
 ---
