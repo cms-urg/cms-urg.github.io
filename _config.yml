@@ -1,6 +1,11 @@
-name: CMS Undergraduate Research Group
+title: CMS Undergraduate Research Group
 description: Blogging about stuffs
 meta_description: "Your New Jekyll Site, Blogging about stuffs"
+
+about:
+  >
+    my name is jun
+    fjkalsdjkfllasdf
 
 aboutPage: true
 
