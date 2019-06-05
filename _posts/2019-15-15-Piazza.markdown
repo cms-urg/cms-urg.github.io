@@ -4,4 +4,4 @@ date:   2019-05-05 10:00:00
 description: Come chat with us on Piazza
 ---
 
-Most of the group discussion happens on Piazza, come check it out here: https://piazza.com/mail.utoronto.ca/other/cscx99
+Most of the group discussion happens on Piazza, come check it out <a href="https://piazza.com/mail.utoronto.ca/other/cscx99">HERE</a>
