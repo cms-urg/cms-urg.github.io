@@ -1,5 +1,4 @@
 ---
-permalink: /project_pages/
 name: Code Clash
 description:
     >
