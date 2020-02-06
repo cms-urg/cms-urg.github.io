@@ -1,0 +1,11 @@
+---
+permalink: /projects/tracademic/
+layout: default
+---
+
+{% for project in site.projects %}
+  {% if project.name == 'TrAcademic' %}
+    <h1>{{ project.name }}</h1>
+    <p>{{ project.description }}</p>
+  {% endif %}
+{% endfor %}
