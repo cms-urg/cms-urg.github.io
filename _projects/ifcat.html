@@ -1,0 +1,11 @@
+---
+permalink: /projects/ifcat/
+layout: default
+---
+
+{% for project in site.projects %}
+  {% if project.name == 'IFCAT' %}
+    <h1>{{ project.name }}</h1>
+    <p>{{ project.description }}</p>
+  {% endif %}
+{% endfor %}
