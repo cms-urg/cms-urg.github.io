@@ -3,4 +3,9 @@ permalink: /projects/codeclash/
 layout: default
 ---
 
-<h1> Hello World </h1>
+{% for project in site.projects %}
+  {% if project.name == 'Code Clash' %}
+    <h1>{{ project.name }}</h1>
+    <p>{{ project.description }}</p>
+  {% endif %}
+{% endfor %}
