@@ -67,11 +67,12 @@ for bib_id in bibdata.entries:
 
 # for each project, create an html file with it's citations
 for project in projectCitationMap:
-    filename = project.replace(" ", "") + "citations.html"
-    f = open(filename, "w")
-    listOfCitations = projectCitationMap[project]
-    for c in listOfCitations:
-        f.write(c + "\n");
-    f.close()
+    if(project != ""):
+        filename = project.replace(" ", "") + "citations.html"
+        f = open(filename, "w")
+        listOfCitations = projectCitationMap[project]
+        for c in listOfCitations:
+            f.write(c + "\n");
+        f.close()
 
     
