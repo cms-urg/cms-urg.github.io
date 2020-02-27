@@ -1,6 +1,10 @@
 ---
 permalink: /people/
 layout: default
+jun:
+ item1: toto
+ "item 2": titi
+ item 3: yoyo
 ---
 
 <h1>People</h1>
@@ -36,4 +40,8 @@ layout: default
             </div>
         {% endif %}      
     {% endif %}
+{% endfor %}
+
+{% for item in jun %}
+ {{ item | inspect }}
 {% endfor %}
