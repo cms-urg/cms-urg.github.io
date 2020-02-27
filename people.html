@@ -14,6 +14,7 @@ layout: default
         <div class="people-card">
             <img src="{{ person.photo }}" />
             <label>{{ person.name }}</label>
+            <p>{{ person.content }}</p>
         </div>
     {% endif %}
 {% endfor %}
@@ -27,8 +28,6 @@ layout: default
         <div class="people-card">
             <img src="{{ person.photo }}" />
             <label>{{ person.name }}</label>
-        </div>
-        <div>
             <p>{{ person.content }}</p>
         </div>
     {% endif %}
