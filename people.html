@@ -28,5 +28,12 @@ layout: default
             <img src="{{ person.photo }}" />
             <label>{{ person.name }}</label>
         </div>
+        {% if person.citations %}
+            <div>
+                {% for cit in person.citations %}
+                    <p>{{ person.citations[cit] }} </p>
+                {% endfor %}
+            </div>
+        {% endif %}      
     {% endif %}
 {% endfor %}
