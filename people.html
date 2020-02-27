@@ -19,6 +19,13 @@ jun:
             <img src="{{ person.photo }}" />
             <label>{{ person.name }}</label>
         </div>
+        {% if person.citations %}
+            <div>
+                {% for cit in person.citations %}
+                    <p>{{ cit }} </p>
+                {% endfor %}
+            </div>
+        {% endif %}  
     {% endif %}
 {% endfor %}
 
@@ -31,14 +38,7 @@ jun:
         <div class="people-card">
             <img src="{{ person.photo }}" />
             <label>{{ person.name }}</label>
-        </div>
-        {% if person.citations %}
-            <div>
-                {% for cit in person.citations %}
-                    <p>{{ cit }} </p>
-                {% endfor %}
-            </div>
-        {% endif %}      
+        </div>    
     {% endif %}
 {% endfor %}
 
