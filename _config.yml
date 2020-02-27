@@ -24,7 +24,7 @@ url:            'https://cms-urg.github.io'
 author:         'CMS Undergraduate Research Group'
 
 permalink:       /:year/:title/
-baseurl:         shamanthc.github.io 
+
 collections:
   - people
   - projects
