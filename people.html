@@ -29,17 +29,7 @@ layout: default
             <label>{{ person.name }}</label>
         </div>
         <div>
-            {% for cit in person.citations %}
-                <p>{{ cit }} </p>
-            {% endfor %}
+            <p>{{ person.content }}</p>
         </div>
-<!--         <p>{{ person.citations["cit1"] }}</p> -->
-<!--         {% if person.citations %}
-            <div>
-                {% for cit in person.citations %}
-                    <p>{{ cit }} </p>
-                {% endfor %}
-            </div>
-        {% endif %}   -->
     {% endif %}
 {% endfor %}
