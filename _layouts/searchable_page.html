@@ -21,16 +21,30 @@ layout: default
 </script> -->
 <script type="text/javascript">
     function doSearch() {
+        var q = document.getElementById("q");
+        var v = q.value.toLowerCase();
         var rows = document.getElementsByTagName("tr");
+        var on = 0;
         for ( var i = 0; i < rows.length; i++ ) {
           var fullname = rows[i].getElementsByClassName("bibitem");
           if(fullname.length > 0) {
             fullname = fullname[0].innerText.toLowerCase();
             console.log(fullname);
+            if ( v.length == 0 || (v.length < 3 && fullname.indexOf(v) == 0) || (v.length >= 3 && fullname.indexOf(v) > -1 ) ) {
+                rows[i].style.display = "";
+                on++;
+            } else {
+                rows[i].style.display = "none";
+            }
           }
-          //fullname = fullname[0].innerHTML.toLowerCase();
-          
         }
+//         var n = document.getElementById("noresults");
+//         if ( on == 0 && n ) {
+//             n.style.display = "";
+//             document.getElementById("qt").innerHTML = q.value;
+//         } else {
+//             n.style.display = "none";
+//         }
     }
 </script>
 
