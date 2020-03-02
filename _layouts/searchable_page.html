@@ -4,7 +4,7 @@ layout: default
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>$(window).load(function(){
-    var $rows = $('#{{ page.searchid }} tr');
+    var $rows = document.getElementsByTagName("tr");
     console.log($rows);
 //     $('#filter').keyup(function() {
 
