@@ -32,6 +32,10 @@ layout: default
             fullname = fullname[0].innerText.toLowerCase();
             console.log(fullname.indexOf(v));
             if ( v.length == 0 || fullname.indexOf(v) > -1/*(v.length < 3 && fullname.indexOf(v) == 0) || (v.length >= 3 && fullname.indexOf(v) > -1 )*/ ) {
+                if(v.length > 0) {
+                    document.getElementsByClassName("count").style.display = "none"
+                    document.getElementsByClassName("sheader").style.display = "none"
+                }
                 rows[i].style.display = "";
                 on++;
             } else {
