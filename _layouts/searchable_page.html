@@ -23,8 +23,8 @@ layout: default
     function doSearch() {
         var rows = document.getElementsByTagName("tr");
         for ( var i = 0; i < rows.length; i++ ) {
-          var fullname = rows[i].getElementsByTagName("td");
-          fullname = fullname[1].innerHTML.toLowerCase();
+          var fullname = rows[i].getElementsByClassName("bibitem");
+          //fullname = fullname[0].innerHTML.toLowerCase();
           console.log(fullname);
         }
     }
