@@ -24,7 +24,7 @@ layout: default
         var rows = document.getElementsByTagName("tr");
         for ( var i = 0; i < rows.length; i++ ) {
           var fullname = rows[i].getElementsByTagName("td");
-          fullname = fullname[0].innerHTML.toLowerCase();
+          fullname = fullname[1].innerHTML.toLowerCase();
           console.log(fullname);
         }
     }
