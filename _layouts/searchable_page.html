@@ -50,7 +50,7 @@ layout: default
                 rows[i].style.display = "none";
             }
             if(on == 0) {
-                document.getElementsByClassName("post-content").innerHTML = "No results for " + q.value;
+                document.getElementById("qt").innerHTML = "No results for " + q.value;
             }
           }
         }
@@ -73,10 +73,10 @@ layout: default
         <div style="float: right;">
           <br />
 <!--           <input type="text" id="filter" placeholder="Search" /> -->
-            <input type="text" size="30" name="q" id="q" value="" onkeyup="doSearch();" placeholder="search" />
+            <input type="text" size="30" name="q" id="q" value="" onkeyup="doSearch();" placeholder="search..." />
         </div>
   </header>
-  <article class="post-content">
+  <article id="qt" class="post-content">
   {{ content }}
   </article>
 </div>
