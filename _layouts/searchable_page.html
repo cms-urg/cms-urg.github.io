@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>$(window).load(function(){
     var $rows = $('#{{ page.searchid }} tr');
     console.log($rows);
@@ -18,29 +18,17 @@ layout: default
         }).hide();
     });
 });
-</script>
-
-<!-- <script>
-function myFunction() {
-    var input, filter, ul, li, a, i, txtValue, tr;
-    input = document.getElementById("filter");
-    filter = input.value.toUpperCase();
-//     ul = document.getElementById("myUL");
-    tr = document.getElementsByTagName("tr");
-    console.log(input);
-    console.log(filter);
-    console.log(tr);
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
+</script> -->
+<script type="text/javascript">
+    function doSearch() {
+        var rows = document.getElementsByTagName("tr");
+        for ( var i = 0; i < rows.length; i++ ) {
+          var fullname = rows[i].getElementsByTagName("td");
+          fullname = fullname[0].innerHTML.toLowerCase();
+          console.log(fullname);
         }
     }
-}
-</script> -->
+</script>
 
 <div class="post">
   <header class="post-header">
@@ -50,7 +38,8 @@ function myFunction() {
         </div>
         <div style="float: right;">
           <br />
-          <input type="text" id="filter" placeholder="Search" />
+<!--           <input type="text" id="filter" placeholder="Search" /> -->
+            <input type="text" size="30" name="q" id="q" value="" onkeyup="doSearch();" />
         </div>
   </header>
   <article class="post-content">
