@@ -24,8 +24,12 @@ layout: default
         var rows = document.getElementsByTagName("tr");
         for ( var i = 0; i < rows.length; i++ ) {
           var fullname = rows[i].getElementsByClassName("bibitem");
+          if(fullname.length > 0) {
+            fullname = fullname[0].innerText.toLowerCase();
+            console.log(fullname);
+          }
           //fullname = fullname[0].innerHTML.toLowerCase();
-          console.log(fullname);
+          
         }
     }
 </script>
