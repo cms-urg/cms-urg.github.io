@@ -31,7 +31,12 @@ layout: default
           if(fullname.length > 0) {
             fullname = fullname[0].innerText.toLowerCase();
             console.log(fullname.indexOf(v));
+            var resultsh = document.getElementsByClassName("count");
+            var sheader = document.getElementsByClassName("sheader");
             if ( v.length == 0 || fullname.indexOf(v) > -1/*(v.length < 3 && fullname.indexOf(v) == 0) || (v.length >= 3 && fullname.indexOf(v) > -1 )*/ ) {
+                if(v.length > 0) {
+                    resultsh.style.display = "none";
+                }
                 rows[i].style.display = "";
                 on++;
             } else {
@@ -58,7 +63,7 @@ layout: default
         <div style="float: right;">
           <br />
 <!--           <input type="text" id="filter" placeholder="Search" /> -->
-            <input type="text" size="30" name="q" id="q" value="" onkeyup="doSearch();" placeholder="Search..." />
+            <input type="text" size="30" name="q" id="q" value="" onkeyup="doSearch();" placeholder="Search" />
         </div>
   </header>
   <article class="post-content">
