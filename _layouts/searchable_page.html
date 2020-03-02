@@ -27,14 +27,12 @@ layout: default
         var rows = document.getElementsByTagName("tr");
         var on = 0;
         for ( var i = 0; i < rows.length; i++ ) {
-          var fullname = rows[i].getElementsByClassName("bibitem");
-          if(fullname.length > 0) {
-            fullname = fullname[0].innerText.toLowerCase();
+          var cit = rows[i].getElementsByClassName("bibitem");
+          if(cit.length > 0) {
+            cit = cit[0].innerText.toLowerCase();
             var resultsh = document.getElementsByClassName("count");
             var sheader = document.getElementsByClassName("sheader");
-            if ( v.length == 0 || fullname.indexOf(v) > -1/*(v.length < 3 && fullname.indexOf(v) == 0) || (v.length >= 3 && fullname.indexOf(v) > -1 )*/ ) {
-                console.log(q.value);
-                console.log(resultsh);
+            if ( v.length == 0 || cit.indexOf(v) > -1/*(v.length < 3 && cit.indexOf(v) == 0) || (v.length >= 3 && cit.indexOf(v) > -1 )*/ ) {
                 if(q.value) {
                     resultsh[0].style.display = "none";
                     for(var j = 0; j < sheader.length; j++) {
