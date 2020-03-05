@@ -119,7 +119,7 @@ for person in personCitationMap:
         f = open(filename, "r")
         data = f.readlines()
         i = 0
-        string = "---"
+        string = "Relevant Citations"
         while(i < len(data)-1 and string not in data[i]):
             i += 1
         print(data[i])
@@ -133,8 +133,8 @@ for person in personCitationMap:
             else:
                 data.append(c + "\n")
                 i+=1
-            print(data[i])
         newdata = ''.join(data)
+        print(newdata)
         f = open(filename, "w")
         f.write(newdata)
         f.close()
