@@ -127,6 +127,8 @@ for person in personCitationMap:
         
         listOfCitations = personCitationMap[person]
         for c in listOfCitations:
+            c = c.replace("<p>", "<h6>")
+            c = c.replace("</p>", "</h6>")
             if(i <= len(data)-1):
                 data[i] = c + "\n"
                 i+=1
