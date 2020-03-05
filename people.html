@@ -25,7 +25,7 @@ layout: default
 {% for person in site.people %}
     {% if person.category == 'student' %}
 	{% if person.content}
-	   <div style="display: flex width:350px">
+	   <div style="display: flex">
 	        <div class="people-card" style="width:350px">
 	            <img src="{{ person.photo }}" />
 	            <label>{{ person.name }}</label>
