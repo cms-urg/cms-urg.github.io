@@ -85,31 +85,55 @@ for bib_id in bibdata.entries:
         continue
 
 
-# for each project, create an html file with it's citations
+# for each project, append to the existing html file
 for project in projectCitationMap:
     if(project != ""):
         filename = "../../" + project.replace(" ", "").lower() + ".html"
-        print(filename)
+        try:
+            f = open(filename, "r")
+            data = f.readlines()
+            i = 0
+            string = "Relevant Citations"
+            while(i < len(data)-1 and string not in data[i]):
+                i += 1
+            i+=1
+            listOfCitations = projectCitationMap[project]
+            for c in listOfCitations:
+                if(i <= len(data)-1):
+                    data[i] = c + "\n"
+                    i+=1
+                else:
+                    data.append(c + "\n")
+                    i+=1
+            newdata = ''.join(data)
+            f = open(filename, "w")
+            f.write(newdata)
+            f.close()
+        except:
+            continue
+
+# for each person concatenate their relevant citations to their md file
+for person in personCitationMap:
+    filename = "../../_people/" + person + ".md"
+    try:
         f = open(filename, "r")
         data = f.readlines()
         i = 0
-        string = "Relevant Citations"
+        string = "---"
         while(i < len(data)-1 and string not in data[i]):
             i += 1
         i+=1
-        listOfCitations = projectCitationMap[project]
+        listOfCitations = personCitationMap[person]
         for c in listOfCitations:
             if(i <= len(data)-1):
                 data[i] = c + "\n"
-                print(data[i])
                 i+=1
             else:
                 data.append(c + "\n")
                 i+=1
         newdata = ''.join(data)
-        print(newdata)
         f = open(filename, "w")
         f.write(newdata)
         f.close()
-
-    
+    except:
+        continue
