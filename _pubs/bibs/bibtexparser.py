@@ -4,16 +4,22 @@ from pybtex.database import BibliographyData, Entry
 #open a bibtex file
 parser = bibtex.Parser()
 bibdata = parser.parse_file("Harrington.bib")
-projectCitationMap= {}
+projectCitationMap = {}
+personCitationMap = {}
 
 for bib_id in bibdata.entries:
     b = bibdata.entries[bib_id].fields
     try:
         projects = b["projects"].split(",")
         for project in projects:
-            projectCitationMap[project.strip()] = [] 
+            projectCitationMap[project.strip()] = []
     except(KeyError):
-        continue    
+        pass
+    authors = bibdata.entries[bib_id].persons["author"]
+    for person in authors:
+        name = person.first()[0] + person.last()[0]
+        if(name not in personCitationMap.keys()):
+            personCitationMap[name] = [] 
 
 #loop through the individual references
 for bib_id in bibdata.entries:
@@ -25,6 +31,7 @@ for bib_id in bibdata.entries:
     try:
         # create the authors section of the citation
         authors = bibdata.entries[bib_id].persons["author"]
+        #print(authors)
         for i in range(len(authors)):
             name = authors[i].last()[0] + ", " + authors[i].first()[0] 
             if(i == len(authors)-2):
@@ -54,11 +61,24 @@ for bib_id in bibdata.entries:
             citation = citation + ""
         citation = citation + "</p>"
         #print(citation)
-        projects = b["projects"].split(",")
-        for project in projects:
-            citationList = projectCitationMap[project.strip()]
-            citationList.append(citation)
-            projectCitationMap[project] = citationList
+        try: 
+            projects = b["projects"].split(",")
+            for project in projects:
+                citationList = projectCitationMap[project.strip()]
+                citationList.append(citation)
+                projectCitationMap[project] = citationList
+        except:
+            pass
+        
+        # populate the person citation map
+        for person in authors:
+            citationName = person.last()[0] + ", " + person.first()[0]
+            name = person.first()[0] + person.last()[0]
+            if citationName in citation:
+                citationList = personCitationMap[name]
+                citationList.append(citation)
+                personCitationMap[name] = citationList
+        
         
     # field may not exist for a reference
     except(KeyError):
@@ -68,11 +88,28 @@ for bib_id in bibdata.entries:
 # for each project, create an html file with it's citations
 for project in projectCitationMap:
     if(project != ""):
-        filename = project.replace(" ", "") + "citations.html"
-        f = open(filename, "w")
+        filename = "../../" + project.replace(" ", "").lower() + ".html"
+        print(filename)
+        f = open(filename, "r")
+        data = f.readlines()
+        i = 0
+        string = "Relevant Citations"
+        while(i < len(data)-1 and string not in data[i]):
+            i += 1
+        i+=1
         listOfCitations = projectCitationMap[project]
         for c in listOfCitations:
-            f.write(c + "\n");
+            if(i <= len(data)-1):
+                data[i] = c + "\n"
+                print(data[i])
+                i+=1
+            else:
+                data.append(c + "\n")
+                i+=1
+        newdata = ''.join(data)
+        print(newdata)
+        f = open(filename, "w")
+        f.write(newdata)
         f.close()
 
     
