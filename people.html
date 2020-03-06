@@ -33,6 +33,9 @@ layout: default
 		{{ person.content }}
 	</div>
 	</div>
+	{% if person.content %}
+		<p>hello</p>
+	{% endif % }
     {% endif %}
 {% endfor %}
 
