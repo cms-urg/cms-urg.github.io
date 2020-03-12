@@ -1,7 +1,7 @@
 ---
 category: faculty
 name: Brian Harrington
-photo: https://uoftcsed.github.io/assets/brian_harrington.jpg
+photo: /assets/photos/brianharrington.jpg
 projects: Code Clash
 ---
 <h6>Relevant Citations</h6>
