@@ -12,8 +12,10 @@ layout: default
 {% for person in site.people %}
     {% if person.category == 'faculty' %}
         <div class="people-card">
-            <img src="{{ person.photo }}" />
-            <label>{{ person.name }}</label>
+	<a href="{{ person.homepage }}" class="post-link">
+	    <img src="{{ site.baseurl }}{{ person.photo }}" />
+	    <label>{{ person.name }}</label>
+	</a>
         </div>
     {% endif %}
 {% endfor %}
@@ -27,8 +29,10 @@ layout: default
 	{% if person.citations %}
  	<div style="display: flex">
 		<div class="people-card" style="width: 320px;">
+		<a href="{{ person.homepage }}" class="post-link">
 		    <img src="{{ site.baseurl }}{{ person.photo }}" />
 		    <label>{{ person.name }}</label>
+		</a>
 		</div>
 		<div>
 			{{ person.content }}
@@ -36,8 +40,10 @@ layout: default
 	</div>
 	{% else %}
 	<div class="people-card" style="width: 120px;">
-	    <img src="{{ person.photo }}" />
-	    <label>{{ person.name }}</label>
+		<a href="{{ person.homepage }}" class="post-link">
+		    <img src="{{ site.baseurl }}{{ person.photo }}" />
+		    <label>{{ person.name }}</label>
+		</a>
 	</div>
 	{% endif %}
 
@@ -51,8 +57,10 @@ layout: default
 {% for person in site.people %}
     {% if person.category == 'alumni' %}
         <div class="people-card">
-            <img src="{{ person.photo }}" />
-            <label>{{ person.name }}</label>
+		<a href="{{ person.homepage }}" class="post-link">
+		    <img src="{{ site.baseurl }}{{ person.photo }}" />
+		    <label>{{ person.name }}</label>
+		</a>
         </div>
     {% endif %}
 {% endfor %}
