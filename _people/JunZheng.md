@@ -1,7 +1,7 @@
 ---
 category: student
 name: Jun Zheng
-photo: /assets/photos/junzheng.jfif
+photo: /assets/photos/junzheng.jpg
 projects: Code Clash IFCAT
 citations: yes
 ---
