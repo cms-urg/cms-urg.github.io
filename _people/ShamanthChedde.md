@@ -1,5 +1,5 @@
 ---
 category: student
 name: Shamanth Chedde
-photo: (/assets/photos/shamanth.jpg)
+photo: {{ site.baseurl }}/assets/photos/shamanth.jpg
 ---
