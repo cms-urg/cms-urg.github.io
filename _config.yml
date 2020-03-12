@@ -25,7 +25,7 @@ author:         'CMS Undergraduate Research Group'
 
 permalink:       /:year/:title/
 
-baseurl: /shamanthc.github.io
+baseurl: /cms-urg.github.io
 
 collections:
   - people
