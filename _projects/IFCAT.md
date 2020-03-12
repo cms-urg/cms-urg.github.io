@@ -4,5 +4,5 @@ description:
     >
     Immediate-Feedback Collaborative Assessment Tool (IFCAT) is a quiz software based on immidiate-feedback assessment technique.
 github: https://github.com/cms-urg/IFCAT-IA
-website: https://shamanthc.github.io/projects/ifcat/
+website: https://cms-urg.github.io/projects/ifcat/
 ---
