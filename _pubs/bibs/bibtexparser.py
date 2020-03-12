@@ -6,16 +6,26 @@ parser = bibtex.Parser()
 bibdata = parser.parse_file("Harrington.bib")
 projectCitationMap = {}
 personCitationMap = {}
+# File path for the folder where the individual html pages for each project are stored
+PROJECTFILEPATH = "../../"
+# File path for the folder where the individual markdown pages for each person are stored
+PEOPLEFILEPATH = "../../_people/"
 
+# initialize the citation maps
 for bib_id in bibdata.entries:
+    # get a bibdata.entries.fields object
     b = bibdata.entries[bib_id].fields
     try:
+        # get the list of projects
         projects = b["projects"].split(",")
+        # for each project create an empty list to store their citations
         for project in projects:
             projectCitationMap[project.strip()] = []
     except(KeyError):
         pass
+    # get the authors
     authors = bibdata.entries[bib_id].persons["author"]
+    # for each other create an empty list to store their citations
     for person in authors:
         name = person.first()[0] + person.last()[0]
         if(name not in personCitationMap.keys()):
@@ -88,7 +98,7 @@ for bib_id in bibdata.entries:
 # for each project, append to the existing html file
 for project in projectCitationMap:
     if(project != ""):
-        filename = "../../" + project.replace(" ", "").lower() + ".html"
+        filename = PROJECTFILEPATH + project.replace(" ", "").lower() + ".html"
         try:
             f = open(filename, "r")
             data = f.readlines()
@@ -109,12 +119,14 @@ for project in projectCitationMap:
             f = open(filename, "w")
             f.write(newdata)
             f.close()
+            print("Finished updating relevant citations for project: " + project)
         except:
+            print("No html file for project: " + project)
             continue
 
 # for each person concatenate their relevant citations to their md file
 for person in personCitationMap:
-    filename = "../../_people/" + person + ".md"
+    filename = PEOPLEFILEPATH + person + ".md"
     try:
         f = open(filename, "r")
         data = f.readlines()
@@ -122,7 +134,7 @@ for person in personCitationMap:
         string = "Relevant Citations"
         while(i < len(data)-1 and string not in data[i]):
             i += 1
-        print(data[i])
+        #print(data[i])
         i+=1
         
         listOfCitations = personCitationMap[person]
@@ -136,9 +148,11 @@ for person in personCitationMap:
                 data.append(c + "\n")
                 i+=1
         newdata = ''.join(data)
-        print(newdata)
+        #print(newdata)
         f = open(filename, "w")
         f.write(newdata)
         f.close()
+        print("Finished updating relevant citations for " + person)
     except:
+        print("No markdown file for " + person)
         continue
