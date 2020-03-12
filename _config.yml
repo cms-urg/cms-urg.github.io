@@ -25,6 +25,8 @@ author:         'CMS Undergraduate Research Group'
 
 permalink:       /:year/:title/
 
+baseurl: /cms-urg.github.io
+
 collections:
   - people
   - projects

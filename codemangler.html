@@ -1,0 +1,25 @@
+---
+permalink: /projects/codemangler/
+layout: default
+---
+
+{% for project in site.projects %}
+  {% if project.name == 'Code Mangler' %}
+    <h1>{{ project.name }}</h1>
+    <p>{{ project.description }}</p>
+  {% endif %}
+{% endfor %}
+
+<h2>People</h2>
+{% for person in site.people %}
+    {% if person.projects contains "Code Mangler" %}
+        <div class="people-card">
+            <img src="{{ person.photo }}" />
+            <label>{{ person.name }}</label>
+        </div>
+    {% endif %}
+{% endfor %}
+
+<hr/>
+
+<h2>Relevant Citations</h2>

@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>$(window).load(function(){
+    var $rows = document.getElementsByTagName("tr");
+    console.log($rows);
+    $('#filter').keyup(function() {
+
+        var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+            reg = RegExp(val, 'i'),
+            text;
+
+        $rows.show().filter(function() {
+            text = $(this).text().replace(/\s+/g, ' ');
+            return !reg.test(text);
+        }).hide();
+    });
+});
+</script> -->
+
+<script type="text/javascript">
+    function doSearch() {
+        var q = document.getElementById("q");
+        var v = q.value.toLowerCase();
+        var rows = document.getElementsByTagName("tr");
+        var on = 0;
+        for ( var i = 0; i < rows.length; i++ ) {
+          var cit = rows[i].getElementsByClassName("bibitem");
+          if(cit.length > 0) {
+            cit = cit[0].innerText.toLowerCase();
+            var resultsh = document.getElementsByClassName("count");
+            var sheader = document.getElementsByClassName("sheader");
+            if ( v.length == 0 || cit.indexOf(v) > -1/*(v.length < 3 && cit.indexOf(v) == 0) || (v.length >= 3 && cit.indexOf(v) > -1 )*/ ) {
+                if(q.value) {
+                    resultsh[0].style.display = "none";
+                    for(var j = 0; j < sheader.length; j++) {
+                        sheader[j].style.display = "none";
+                    }
+                } else {
+                    resultsh[0].style.display = "";
+                    for(var j = 0; j < sheader.length; j++) {
+                        sheader[j].style.display = "";
+                    }
+                }
+                rows[i].style.display = "";
+                on++;
+            } else {
+                rows[i].style.display = "none";
+            }
+//             if(on == 0) {
+//                 document.getElementById("qt").style.display = ""
+//                 document.getElementById("qt").innerHTML = "No results for " + q.value;
+//             } else {
+//                 document.getElementById("qt").style.display = "none"
+//             }
+          }
+        }
+    }
+</script>
+
+<div class="post">
+  <header class="post-header">
+    <div style="width: 100%; overflow: hidden;">
+        <div style="width: 60%; float: left;">
+            <h1 class="h2">{{ page.title }}</h1>
+        </div>
+        <div style="float: right;">
+          <br />
+<!--           <input type="text" id="filter" placeholder="Search" /> -->
+            <input type="text" size="30" name="q" id="q" value="" onkeyup="doSearch();" placeholder="Search" />
+        </div>
+  </header>
+  <article class="post-content">
+    {{ content }}
+    <p id="qt"></p>
+  </article>
+</div>
