@@ -23,9 +23,10 @@ layout: default
 <h2>Students</h2>
 
 {% for person in site.people %}
+    {% if person.content %}
     {% if person.category == 'student' %}
 	<div style="display: flex">
-	<div class="people-card">
+	<div class="people-card" style="width: 340px">
 	    <img src="{{ person.photo }}" />
 	    <label>{{ person.name }}</label>
 	</div>
@@ -33,6 +34,7 @@ layout: default
 		{{ person.content }}
 	</div>
 	</div>
+    {% endif %}
     {% endif %}
 {% endfor %}
 
